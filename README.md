@@ -49,5 +49,17 @@ adb shell am start -n com.dxbmr.lgservice/.MainActivity --es cmd net_instart --e
 adb logcat -s LGSR:I
 ```
 Note: the TV itself (webOS) does not run ADB. ADB drives the phone, and the phone sends IR or network commands to the TV.
-"# LG-Service-Remote" 
-"# LG-Service-Remote" 
+
+## Run on the phone itself (Termux, no PC)
+1. Install the app and open it once (accept the warning).
+2. Install **Termux** from F-Droid or GitHub (not the outdated Play Store build).
+3. Copy `scripts/lg_phone.sh` to the phone's Downloads, then in Termux:
+   ```
+   termux-setup-storage
+   cp ~/storage/downloads/lg_phone.sh ~/ && chmod +x ~/lg_phone.sh
+   ~/lg_phone.sh
+   ```
+4. Pick from the menu, or run directly: `~/lg_phone.sh installer 1105`, `~/lg_phone.sh key OK`,
+   `~/lg_phone.sh net-instart 192.168.1.50`.
+
+If the app doesn't come to the front on Android 10+, allow Termux **Display over other apps**.

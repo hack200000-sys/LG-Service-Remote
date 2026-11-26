@@ -50,3 +50,4 @@ adb logcat -s LGSR:I
 ```
 Note: the TV itself (webOS) does not run ADB. ADB drives the phone, and the phone sends IR or network commands to the TV.
 "# LG-Service-Remote" 
+"# LG-Service-Remote" 
